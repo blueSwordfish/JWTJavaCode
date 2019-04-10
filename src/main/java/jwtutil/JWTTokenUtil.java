@@ -11,20 +11,20 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  *
- * @author lihuihu
+ * @author 
  */
 public class JWTTokenUtil {
     
     
      // expirationTime is in second since 1970-01-01
    
-    public static String generateJWTTokenWithSubject(int expirationTime, String subject, String riToGdxKey) {
+    public static String generateJWTTokenWithSubject(int expirationTime, String subject, String Key) {
         Date now = new Date();
         Date exp = new Date(now.getTime() + (expirationTime));
         String jws = Jwts.builder()
                 .setSubject(subject)                
                 .setExpiration(exp)
-                .signWith(SignatureAlgorithm.HS256,riToGdxKey)
+                .signWith(SignatureAlgorithm.HS256,Key)
                 .compact();
         return jws;     
     }

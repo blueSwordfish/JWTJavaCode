@@ -11,7 +11,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  *
- * @author 
+ * 
  */
 public class JWTTokenUtil {
     
